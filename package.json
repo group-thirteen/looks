@@ -6,7 +6,10 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
+  "scripts": {
+    "start": "nodemon server/index.js",
+    "react-dev": "webpack -d --watch"
+  },
   "dependencies": {
     "express": "^4.17.1",
     "react": "^16.13.0"
