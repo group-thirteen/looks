@@ -6,5 +6,12 @@
  */
 
 module.exports = {
-  extends: "airbnb-base"
+  "extends": "airbnb",
+  "plugins": [
+      "react",
+  ],
+  "env": {
+    "jest": true,
+    "browser": true
+  }
 };
