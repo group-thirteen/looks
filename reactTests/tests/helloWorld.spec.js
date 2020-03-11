@@ -1,16 +1,14 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import App from '../../client/src/components/App.jsx';
-import {mount, shallow} from 'enzyme';
 
-describe('My Test Suite', () => {
-  it('My Test Case', () => {
+describe('Testing environment set-up', () => {
+  it('"npm test" should run jest correctly', () => {
     expect(true).toEqual(true);
   });
-});
 
-describe('React test', () => {
   it('Should handle React components', () => {
-    let handler = shallow(<App />);
+    const handler = shallow(<App />);
     expect(handler).toExist();
   });
 });
