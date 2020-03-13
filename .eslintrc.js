@@ -1,10 +1,3 @@
-/**
- * These rules enforce the Hack Reactor Style Guide
- *
- * Visit this repo for more information:
- *   https://github.com/reactorcore/eslint-config-hackreactor
- */
-
 module.exports = {
   "extends": ["airbnb-base",
     "eslint:recommended",
@@ -17,6 +10,9 @@ module.exports = {
     "react": {
       "version": "detect"
     }
+  },
+  "rules": {
+    "no-console": "off"
   },
   "parserOptions": {
     "ecmaVersion": 6,

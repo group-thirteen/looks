@@ -8,7 +8,7 @@ describe('Testing environment set-up', () => {
   });
 
   it('Should handle React components', () => {
-    const handler = shallow(<App />);
-    expect(handler).toExist();
+    const wrapper = shallow(<App />);
+    expect(wrapper).toExist();
   });
 });

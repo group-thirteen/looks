@@ -5,14 +5,15 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      message: 'Hello world',
+      imageURL: 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/bags/021bb968-fa64-41d3-a69d-129ded1c262e.jpeg',
+      imageFolder: 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/bags',
     };
   }
 
   render() {
     return (
       <div>
-        {this.state.message}
+        <img src={this.state.imageURL} />
       </div>
     );
   }
