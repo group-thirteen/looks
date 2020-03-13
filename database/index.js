@@ -13,6 +13,8 @@ const s3 = new AWS.S3({ apiVersion: '2006-03-01' });
 
 AWS.config.update({ region: 'us-west-1' });
 
+// each category will be an array of objects
+// each object will include the image url and the price for rendering in carousel
 const itemSchema = mongoose.Schema({
   bottoms: Array,
   belts: Array,
@@ -23,6 +25,9 @@ const itemSchema = mongoose.Schema({
   tops: Array,
 });
 
+const Item = mongoose.model('Item', itemSchema);
+
+// interface with S3 to get image urls
 const getUrls = (params, callback) => {
   s3.listObjectsV2(params, (err, data) => {
     if (err) {
@@ -33,16 +38,18 @@ const getUrls = (params, callback) => {
   });
 };
 
-const Item = mongoose.model('Item', itemSchema);
-
 // take in data.Contents
+// create array of objects
 const createObjArray = (itemList) => {
-  const objArray = itemList.map((item) => ({ url: `https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/${item.Key}`, price: `$${faker.commerce.price()}` }));
+  const objArray = itemList.map((item) => ({
+    url: `https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/${item.Key}`,
+    price: `$${faker.commerce.price()}`,
+  }));
 
   return objArray;
 };
 
-// create a new array of three random items
+// create a new array of x random items from parent array
 const chooseX = (x, array) => {
   const newArray = [];
   for (let i = 0; i < x; i += 1) {
@@ -63,6 +70,7 @@ const categories = [
   'tops',
 ];
 
+// function to create documents and write to db
 const saveItem = (categoryList) => {
   const promises = categoryList.map((category) => new Promise((resolve, reject) => {
     const bucketInfo = {
@@ -95,7 +103,7 @@ const saveItem = (categoryList) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`Successful write of item ${item._id}`);
+        console.log(`Successful write of item ${item._id}`, result);
       }
     });
   });
