@@ -1,5 +1,7 @@
+/* eslint-disable no-underscore-dangle */
 const mongoose = require('mongoose');
-const DataGen = require('./dataGenerator.js');
+const AWS = require('aws-sdk');
+const faker = require('faker');
 
 mongoose.connect('mongodb://localhost/products',
   {
@@ -7,8 +9,11 @@ mongoose.connect('mongodb://localhost/products',
     useUnifiedTopology: true,
   });
 
+const s3 = new AWS.S3({ apiVersion: '2006-03-01' });
+
+AWS.config.update({ region: 'us-west-1' });
+
 const itemSchema = mongoose.Schema({
-  id: Number,
   bottoms: Array,
   belts: Array,
   bags: Array,
@@ -18,44 +23,84 @@ const itemSchema = mongoose.Schema({
   tops: Array,
 });
 
+const getUrls = (params, callback) => {
+  s3.listObjectsV2(params, (err, data) => {
+    if (err) {
+      console.log(err);
+    } else {
+      callback(null, data);
+    }
+  });
+};
+
 const Item = mongoose.model('Item', itemSchema);
 
 // take in data.Contents
 const createObjArray = (itemList) => {
-  const randomPrice = (Math.random() * 300 + 200);
-  const objArray = itemList.map((item) => ({ url: `https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/${item.Key}`, price: `${randomPrice}` }));
+  const objArray = itemList.map((item) => ({ url: `https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/${item.Key}`, price: `$${faker.commerce.price()}` }));
 
   return objArray;
 };
 
-const bucketInfo = {
-  Bucket: 'hrsf126-looks-fec',
-  Prefix: 'fec-imagery/shoes',
+// create a new array of three random items
+const chooseX = (x, array) => {
+  const newArray = [];
+  for (let i = 0; i < x; i += 1) {
+    const randomIndex = Math.floor(Math.random() * (array.length - 1));
+    newArray.push(array[randomIndex]);
+  }
+
+  return newArray;
 };
 
-DataGen.getUrls(bucketInfo, (err, data) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(createObjArray(data.Contents));
-  }
-});
+const categories = [
+  'bottoms',
+  'belts',
+  'bags',
+  'jewelry',
+  'outerwear',
+  'shoes',
+  'tops',
+];
 
-const saveItem = (itemList) => {
-  itemList.forEach((item) => {
-    const itemDoc = new Item({
-      category: item.category,
-      imgurl: item.catImg,
+const saveItem = (categoryList) => {
+  const promises = categoryList.map((category) => new Promise((resolve, reject) => {
+    const bucketInfo = {
+      Bucket: 'hrsf126-looks-fec',
+      Prefix: `fec-imagery/${category}`,
+    };
+
+    getUrls(bucketInfo, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        const dataObj = {};
+        const objArray = data.Contents;
+
+        dataObj[category] = chooseX(3, createObjArray(objArray));
+        resolve(dataObj);
+      }
+    });
+  }));
+
+  Promise.all(promises).then((values) => {
+    const itemObj = {};
+    values.forEach((property) => {
+      Object.assign(itemObj, property);
     });
 
-    itemDoc.save((err, res) => {
+    const item = new Item(itemObj);
+
+    item.save((err, result) => {
       if (err) {
-        console.log('Error writing item to database', err);
+        console.log(err);
       } else {
-        console.log('Successful write to db', res);
+        console.log(`Successful write of item ${item._id}`);
       }
     });
   });
 };
+
+saveItem(categories);
 
 module.exports = { saveItem };
