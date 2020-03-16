@@ -1,19 +1,46 @@
 import React from 'react';
+import $ from 'jquery';
+import exampleDbEntry from '../../../database/exampleDbEntry';
+import categories from '../../../database/categories';
+import Carousel from './Carousel.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      imageURL: 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/bags/021bb968-fa64-41d3-a69d-129ded1c262e.jpeg',
-      imageFolder: 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/bags',
+      imageURLs: exampleDbEntry,
+      categories,
     };
+
+    this.getData = this.getData.bind(this);
+  }
+
+  getData() {
+    $.ajax({
+      method: 'GET',
+      url: '/api/getimageurls',
+      success: (imageData) => {
+        this.setState({
+        ...this.state,
+        imageURLs: imageData,
+      })},
+      error: (err) => {
+        console.log(err);
+      }
+    })
+  }
+
+  componentDidMount() {
+    this.getData();
   }
 
   render() {
     return (
-      <div>
-        <img src={this.state.imageURL} />
+      <div className='looks' test='looks'>
+        {this.state.categories.map(
+          (category) => <Carousel imageData={this.state.imageURLs[category]} key={category}/>
+        )}
       </div>
     );
   }

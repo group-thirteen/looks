@@ -71,7 +71,7 @@ const categories = [
 ];
 
 // function to create documents and write to db
-const saveItem = (categoryList) => {
+const saveItem = (categoryList, callback) => {
   const promises = categoryList.map((category) => new Promise((resolve, reject) => {
     const bucketInfo = {
       Bucket: 'hrsf126-looks-fec',
@@ -103,12 +103,15 @@ const saveItem = (categoryList) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`Successful write of item ${item._id}`, result);
+        console.log(`Successful write of item ${item._id}`);
+        callback(null, result);
       }
     });
   });
 };
 
-saveItem(categories);
+saveItem(categories, (err, result) => {
+  console.log('success', result);
+});
 
 module.exports = { saveItem };

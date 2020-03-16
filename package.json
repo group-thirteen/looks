@@ -9,8 +9,9 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "test": "jest --config ./jest.config.js",
-    "test-coverage": "jest --coverage"
+    "test": "jest --config ./jest.config.js --watch ./reactTests/tests",
+    "test-coverage": "jest --coverage",
+    "seed": "node ./database/index.js"
   },
   "dependencies": {
     "@babel/core": "^7.8.7",
@@ -20,6 +21,7 @@
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "babel-preset-airbnb": "^4.4.0",
+    "body-parser": "^1.19.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.1",
@@ -27,9 +29,14 @@
     "jest": "^25.1.0",
     "jest-environment-enzyme": "^7.1.2",
     "jest-enzyme": "^7.1.2",
+    "jquery": "^3.4.1",
+    "jsdom": "^16.2.1",
     "mongoose": "^5.9.4",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "testdouble": "^3.13.0",
     "uuid": "^7.0.2"
   },
   "devDependencies": {
