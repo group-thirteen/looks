@@ -1,5 +1,5 @@
 module.exports = {
-  testRegex: '((\\.|/*.)(spec))\\.js?$',
+  testRegex: '((\\.|/*.)(spec | test))\\.js?$',
   clearMocks: true,
   moduleFileExtensions: [
     'js',

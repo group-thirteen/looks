@@ -17,3 +17,13 @@ describe('App rendering', () => {
     expect(wrapper).toContainMatchingElements(7, 'Carousel');
   });
 });
+
+describe('API calls', () => {
+  it('should make a "get" request to the server upon mount', () => {
+  });
+
+  it('should change the state upon successful ajax call', () => {
+  });
+
+  it('should console log error if ajax call fails', () => {});
+});

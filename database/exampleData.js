@@ -2,13 +2,6 @@
 
 const exampleData = [
   {
-    Key: 'fec-imagery/bottoms/.DS_Store',
-    LastModified: 2020-03-12T22:44:09.000Z,
-    ETag: '"194577a7e20bdcc7afbb718f502c134c"',
-    Size: 6148,
-    StorageClass: 'STANDARD'
-  },
-  {
     Key: 'fec-imagery/bottoms/14576c28-2482-42c2-8223-46101287362f.jpeg',
     LastModified: 2020-03-12T22:44:10.000Z,
     ETag: '"a5f9bdf4c13c57ae1e283e455ff93cb2"',
@@ -127,4 +120,695 @@ const exampleData = [
     Size: 14283,
     StorageClass: 'STANDARD'
   }
-];
+]
+[
+  {
+    Key: 'fec-imagery/belts/1613c17f-fe3c-41c2-b030-b679cec21129.jpeg',
+    LastModified: 2020-03-12T22:44:07.000Z,
+    ETag: '"bac740e710263fbffb37c0c85f9af835"',
+    Size: 2561,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/belts/21933e4c-68b5-4f6d-886f-dec19c0d4e5a.jpeg',
+    LastModified: 2020-03-12T22:44:07.000Z,
+    ETag: '"9f713e229e05d0220be1ac1a23a46956"',
+    Size: 12012,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/belts/3a7f625c-5634-46be-ac90-08ebc8952577.jpeg',
+    LastModified: 2020-03-12T22:44:07.000Z,
+    ETag: '"b5d5f0995365a42535241e191e6e9c35"',
+    Size: 2475,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/belts/3f373627-3d56-48c5-bc84-0b292b4c5e89.jpeg',
+    LastModified: 2020-03-12T22:44:07.000Z,
+    ETag: '"90bafa429f6b06e1d91efdce3e20e6ab"',
+    Size: 5846,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/belts/8e44a692-c2d0-4742-a4c3-d155a12f5aa6.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"c20b128c0d64a78b5f7fcf5c214596cf"',
+    Size: 2880,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/belts/b30838fe-51e0-4ecd-a567-2aa2c18d2177.jpeg',
+    LastModified: 2020-03-12T22:44:07.000Z,
+    ETag: '"846be8472407597587b86359260749d7"',
+    Size: 2162,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/belts/ba653abc-49d6-4be2-900b-033f70d37869.jpeg',
+    LastModified: 2020-03-12T22:44:07.000Z,
+    ETag: '"b4f37aa163741f22d42760659e776571"',
+    Size: 2634,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/belts/cd8a459b-854d-464b-94b9-825400305e18.jpeg',
+    LastModified: 2020-03-12T22:44:07.000Z,
+    ETag: '"c6aad9bf7b4dc3f97fd1fa2cc2145c9c"',
+    Size: 2320,
+    StorageClass: 'STANDARD'
+  }
+]
+[
+  {
+    Key: 'fec-imagery/jewelry/.DS_Store',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"194577a7e20bdcc7afbb718f502c134c"',
+    Size: 6148,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/0de73e69-6946-43c7-9532-bd8b8188bba0.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"19e5bed943846946c197f2325d824451"',
+    Size: 3076,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/133ff37d-a370-44b0-b53e-5a15a9a2b53d.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"2c691b0f4834a6ad3ee88cf51f55a797"',
+    Size: 3024,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/3c7fd4df-7e2a-43c0-a1b9-e3e9945aea62.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"8bf60ad48b9cb84aa8b143585813164c"',
+    Size: 8070,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/4cbe9f35-5a6a-440b-acb1-0b709ac1d1d8.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"6b4c4e61908807e440a566376b561859"',
+    Size: 9466,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/50da521c-fcc1-42a0-b3a5-772bffa94235.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"09a58e1f5ed4bc5f8709d3cc70fc5ed8"',
+    Size: 5188,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/56a2ffba-7fcd-45dc-92a3-328d19263da0.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"890d7a28c52a47673f2e1826bdda54be"',
+    Size: 3607,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/5d9ed29a-97a1-4f12-be12-c206fd1013c0.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"8e87b8957d0e9e504b7ac2ffcdadd8dc"',
+    Size: 5820,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/713d39a0-ffa5-46e1-91aa-a1c75cf9de22.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"2b04512b847ddaec30ecaeb65a292f21"',
+    Size: 6605,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/7cd0774a-e091-41bd-91bb-45154a6d7c67.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"8120047f1eeb80fc66e0a119dce03d4d"',
+    Size: 11316,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/8050d9c2-79a1-497f-b585-7235d6c446a1.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"027f34c37390dade315d3dec68ddd6db"',
+    Size: 3240,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/968b874f-e631-4b40-a1ec-ec85e376ae94.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"a9617d02494c3352987b6ca54cfb28fd"',
+    Size: 5997,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/ac0914d1-8c5c-42cb-92ce-e8ee2aa9e7f1.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"6d3da96bf47c3d0241ce8877a6d9ef3a"',
+    Size: 4804,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/c0482369-0721-43d7-ba22-09d51727714d.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"93b9efc5da27d3d3e49904552fe9722e"',
+    Size: 2511,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/c2f0c151-0541-4785-8871-ad7f0cbfc72c.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"39ac4322da55d811a3cccac2f39fc348"',
+    Size: 5290,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/ca6f232b-b17d-4339-8698-ad1c082338e5.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"e11baedf19d86c40758e927416f19d53"',
+    Size: 3714,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/cdfa4ab2-f4eb-4f30-a49c-f4071e375a5d.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"da183cbacaae30a6702de53c91cfcc84"',
+    Size: 4015,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/d5acdab1-799b-4351-8125-3bf64f1275eb.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"1948f0713a76634c9c595ddcc4e6121d"',
+    Size: 4878,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/e76f7384-0cb7-4956-8ba4-858dbe4fd94a.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"6ef20da60d4d7280c084d78e2906725a"',
+    Size: 5458,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/e8af7167-bb07-4065-82a7-2bbf637d61bc.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"bf353e0b807d390f3a2b5b82b9bd7627"',
+    Size: 3756,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/e9994062-c894-4883-98c6-64ad6fda5aba.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"5f1e4840c88f4f13d3f6e35110927233"',
+    Size: 4474,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/ee0dd52d-ed7f-4e67-872a-c09275c35283.jpeg',
+    LastModified: 2020-03-12T22:44:08.000Z,
+    ETag: '"2611880b1027144a1edfdaf691a87f75"',
+    Size: 8397,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/jewelry/f9247c72-3f73-4272-8ff3-169f04ac8fcc.jpeg',
+    LastModified: 2020-03-12T22:44:09.000Z,
+    ETag: '"d6bfbcb43a31482763760f67360a9b91"',
+    Size: 10755,
+    StorageClass: 'STANDARD'
+  }
+]
+[
+  {
+    Key: 'fec-imagery/bags/021bb968-fa64-41d3-a69d-129ded1c262e.jpeg',
+    LastModified: 2020-03-12T22:44:10.000Z,
+    ETag: '"7ac03355ecf521c5e39139160f96474f"',
+    Size: 7411,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/03428a32-efaf-466b-9781-9a36f74e5b54.jpeg',
+    LastModified: 2020-03-12T22:44:10.000Z,
+    ETag: '"908f078b7d23b4335398cf0d3c999570"',
+    Size: 6877,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/11f4c593-e05d-4916-9cf3-10efd60b7985.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"381e4b9b83e4e2c249ee95c1fb38d25c"',
+    Size: 11093,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/3dc07408-20ae-46e6-8069-48e03f470d18.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"a1585737b1f0f607e97ba29062ff5760"',
+    Size: 22936,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/3e926fa2-2171-4ba6-a9ec-aa3a1011d2ac.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"1ba424a2937a725e13abe9f891ae7d76"',
+    Size: 8670,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/530f856f-e8d8-4596-9032-ea58e37daf20.jpeg',
+    LastModified: 2020-03-12T22:44:10.000Z,
+    ETag: '"dc330f2e8879a68780bd381401f52c89"',
+    Size: 13050,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/5f3e0052-cd26-4415-81f8-845c7c0fbf22.jpeg',
+    LastModified: 2020-03-12T22:44:10.000Z,
+    ETag: '"ddea526c1ad5022622e7bd877478b3d5"',
+    Size: 10395,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/74342da7-d826-47cd-8c4a-43671c8c6e69.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"0d0626124c522440b16dc09787d5bd15"',
+    Size: 16924,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/766c5ba6-6ad1-48ef-88f8-e3d00b17cd4d.jpeg',
+    LastModified: 2020-03-12T22:44:10.000Z,
+    ETag: '"564aed3d1d283c8a58880f40d0e5757b"',
+    Size: 14233,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/82d5230e-0cc0-40ca-8ae0-4634a6fa9fa9.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"8fe662406f0bc14adf60cc7948a52333"',
+    Size: 12382,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/99f2ba01-a9b8-4178-a46f-7b2987a814ca.jpeg',
+    LastModified: 2020-03-12T22:44:10.000Z,
+    ETag: '"fe3be65e85da11bf9bca57597b5b3194"',
+    Size: 8684,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/9f51c9b0-6c96-4ae9-8371-c6c6dc230fd4.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"3242b03002567b5dc3de50b09a56afb7"',
+    Size: 9914,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/a3abb5e7-53e8-4375-a082-cba1e9b12be5.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"28617b945f47dd03358ba1ca32743f08"',
+    Size: 6391,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/a5555281-0836-4466-b50d-d6079a00b5d6.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"07397e2cd940c23e26db4c4fd5feaf45"',
+    Size: 9914,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/b2e2a874-31a5-4720-92b5-37d27f13b924.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"b869f1cc1b7d43dca9df27ae72c7b18b"',
+    Size: 19378,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/c47ca7c3-7ca0-4d7a-94f1-d0eb2e7427b3.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"9e450a96fe6f57fd38519573a16c957a"',
+    Size: 8523,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/d791c867-f480-42b2-9c25-93051cdfa413.jpeg',
+    LastModified: 2020-03-12T22:44:10.000Z,
+    ETag: '"a2b45a6347c1e9ef53da843df036db78"',
+    Size: 10189,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/bags/f9056b81-c9d1-4c08-ad91-863dba9a7bbe.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"4d1e5db0e8103a43fbdd102f9cab4683"',
+    Size: 8817,
+    StorageClass: 'STANDARD'
+  }
+]
+[
+  {
+    Key: 'fec-imagery/shoes/3ebfbc0f-31cd-4db8-b07e-e47f80c8c5d7.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"b6d577e27b49fae906e717efbc564de6"',
+    Size: 6289,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/4b94ed94-3c7d-4582-9cf3-44bb3dca3328.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"85f3a73ce197ca63c69a3c5568a3c9aa"',
+    Size: 4779,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/56a216ea-92f0-4d9e-b7c2-86fef6365977.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"b8655367af2470508ea79b6590942901"',
+    Size: 7564,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/592ce8c9-9bba-43d0-b2e8-982405919e66.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"db658780a769a86ffe401750bedea4d5"',
+    Size: 6816,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/67d9f72f-1fb4-4a42-9910-4a1b896ee6d6.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"58c691638434a78e6ffcba5cd141c5df"',
+    Size: 4775,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/683790fa-31f0-4db5-a6d2-939736a70f61.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"8ceb074ea2b542cf77b3212c1b275d0b"',
+    Size: 3807,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/70e3d03a-32d6-49f2-a890-5989396ba598.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"db8704fe9efa1f7fb9073f59bac283d0"',
+    Size: 7552,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/87a7d9ef-ed79-4d2b-852b-8540c555142f.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"7a282e62fb662ea7d78ce542a8fc8269"',
+    Size: 6638,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/88623510-e5eb-43eb-abf3-b109c0de5892.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"3f42e1180d58f041c3120fbfd0271d03"',
+    Size: 4825,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/8e93a40f-4f91-4521-8ee5-7f2ecb937688.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"73e6fa63ae207cfa0fd33384321484b9"',
+    Size: 6595,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/95859346-a5d9-46d2-aec8-3a8169451382.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"fd5add5314c17f9ade1ce1ee31f7ee85"',
+    Size: 14495,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/9e412e41-268b-4282-9a2e-5e9f85cc211d.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"b733868f5c05af03a3c1aa7f826f62eb"',
+    Size: 7539,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/a00e1370-7b92-4c5b-bf8a-986372522bd0.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"e11c1d8af997dcfc6fe4e0231f0d6fc1"',
+    Size: 6948,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/ad845626-fafa-4366-ad45-f5297a66588f.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"5f87d0e430d6571e3ddc881b6127dcd7"',
+    Size: 6318,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/b0c7b535-2aff-4bd1-b371-d239ed47a961.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"91e27a2dd57382db380af6f7f40eba0d"',
+    Size: 7280,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/b36d0950-7ddd-4448-a624-e4937676d183.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"a4781256b51fbbe0159d0099b9c7dd75"',
+    Size: 6088,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/cac2c34d-bd8e-4b00-b379-a731bcb2b45c.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"310b20d24b984701e96eb5e2753cd58d"',
+    Size: 5983,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/e4f3d182-7599-4b88-8457-f2e1cd6f6b89.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"1edc9303e1fb352ab2589b94a19d65ff"',
+    Size: 6655,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/shoes/e50d697d-c532-424c-88fc-0c66dfea271b.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"502e1911e722534fb0192c422ad6a2e0"',
+    Size: 6168,
+    StorageClass: 'STANDARD'
+  }
+]
+[
+  {
+    Key: 'fec-imagery/tops/0517efeb-b529-4d06-807a-53531acde45c.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"0c33deb15b02e632d8d346e96e2e0ac5"',
+    Size: 26561,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/10e3186c-967f-4001-aa64-cd87d9f5908e.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"1390b95de65a146548e6ef28af1180ed"',
+    Size: 14447,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/228c5194-df7e-4bf4-ad5a-6c05492b372c.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"b24c38ca006cbdfc2572211bfcf2fb95"',
+    Size: 9639,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/31697782-f360-43fe-99f3-7e81c55bc5d6.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"93a257382b22b3a61205a06a5746fbef"',
+    Size: 25370,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/387bd34c-1815-4bcc-9251-673768963a23.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"24f8ebad1556ea9dcd3a8fbbb27d9b35"',
+    Size: 40279,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/3f373627-3d56-48c5-bc84-0b292b4c5e89.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"90bafa429f6b06e1d91efdce3e20e6ab"',
+    Size: 5846,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/6aad938d-14b2-4358-8dbe-a9f250c5b730.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"733593af6847b67a553bfa3b54b31526"',
+    Size: 5574,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/89c2a3e2-4956-4ca6-b608-9f4d08e0fe13.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"036f52bc23f3ae71721234358d582548"',
+    Size: 28071,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/8f612839-aeed-4f84-8490-8549e43e3a24.jpeg',
+    LastModified: 2020-03-12T22:44:05.000Z,
+    ETag: '"fcc31f4a98c685253600298eb4cffa3c"',
+    Size: 32960,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/95e7393c-7ed1-44e4-8ffe-1c032b4cb86b.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"b6a5b49ed998302274e090f6bef20109"',
+    Size: 10889,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/9a2dbd93-6fa4-4cc5-bd8b-940bfb6c4f76.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"d005612617466bdf0fc8ff2efd652a1f"',
+    Size: 51168,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/a4dee900-eb7a-4b7d-9187-2941d44f5b4a.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"8a15db3863c6413adb5ceb7aa985e771"',
+    Size: 11694,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/b03bace5-3a8b-4f8e-b622-46589d9fcbea.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"ef39e1a17a1d18ec121a776bfcdb2182"',
+    Size: 14498,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/b81deb12-4888-40e6-802a-7ea36a3c6700.jpeg',
+    LastModified: 2020-03-12T22:44:05.000Z,
+    ETag: '"16108a1f6619d48e449c5490d7aa5043"',
+    Size: 12041,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/c47f8f31-3af7-4aef-9f13-591a58045b87.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"23e2f173140407cfcee6435d089cd9d6"',
+    Size: 37321,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/cdbd100a-e802-40cf-8fdb-e471e10a2324.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"7534460dfe7cb78cc2f35ee777914f89"',
+    Size: 45833,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/d9c20d4f-5405-45d3-9f21-40a618df9061.jpeg',
+    LastModified: 2020-03-12T22:44:05.000Z,
+    ETag: '"b2f0bbe43e57dd280830c675b58635df"',
+    Size: 19665,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/e5291657-82d0-41f1-a0fc-01fce8d38d56.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"e32073cc386c6aee9746669bfc5f7455"',
+    Size: 7408,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/tops/ea5d7475-1125-48a6-b02a-2c3be8bd4a8c.jpeg',
+    LastModified: 2020-03-12T22:44:06.000Z,
+    ETag: '"6d8e4fc2ec2379a39f677c868771844b"',
+    Size: 12927,
+    StorageClass: 'STANDARD'
+  }
+]
+[
+  {
+    Key: 'fec-imagery/outerwear/.DS_Store',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"194577a7e20bdcc7afbb718f502c134c"',
+    Size: 6148,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/006066ee-80a8-4890-8886-f12b7856fa77.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"e7b2dc56491ce2b33cdf65470db2222f"',
+    Size: 17792,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/24e94e13-9de8-4c5c-acad-079ce6a321b4.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"ae8a1839c44e15936d3705b050cdd819"',
+    Size: 16009,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/49ead56f-646a-4e27-b18b-a014d95d687d.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"b6fddfdfa8d6f067a45a9a8212dbe443"',
+    Size: 13367,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/4a0b8146-aca3-4c2a-baae-7316c57977ff.jpeg',
+    LastModified: 2020-03-12T22:44:12.000Z,
+    ETag: '"51188055d4fc94648ba64f031cf59bb0"',
+    Size: 19885,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/4a1a54af-b097-43e1-b26c-9485aa4c84a8.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"9da479cc7740cdf74d0637780594da59"',
+    Size: 24298,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/6954c084-41d5-49f9-9cce-a73242e2a5a1.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"cfbf4748b1ff3058b88e022fd79bb31a"',
+    Size: 16664,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/6e27017d-3e1e-411e-b325-1bb526a48d14.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"2c33b8a25691b9f6ebd1d93bc38aa0eb"',
+    Size: 10163,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/88784edc-0237-4331-98ab-43803be43440.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"c585dbb3527fb5d54706b9538246ad4d"',
+    Size: 19205,
+    StorageClass: 'STANDARD'
+  },
+  {
+    Key: 'fec-imagery/outerwear/9c3e33b0-b0fd-4646-a235-70c8fb93b49e.jpeg',
+    LastModified: 2020-03-12T22:44:11.000Z,
+    ETag: '"df9a557d5eca327f138be80d546f2a8e"',
+    Size: 28322,
+    StorageClass: 'STANDARD'
+  }
+]

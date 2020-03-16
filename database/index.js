@@ -38,10 +38,21 @@ const getUrls = (params, callback) => {
   });
 };
 
+const categories = [
+  'bags',
+  'belts',
+  'bottoms',
+  'jewelry',
+  'outerwear',
+  'shoes',
+  'tops',
+];
+
 // take in data.Contents
 // create array of objects
 const createObjArray = (itemList) => {
   const objArray = itemList.map((item) => ({
+    id: `${item.ETag.substring(3, item.ETag.length - 2)}`,
     url: `https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/${item.Key}`,
     price: `$${faker.commerce.price()}`,
   }));
@@ -51,24 +62,15 @@ const createObjArray = (itemList) => {
 
 // create a new array of x random items from parent array
 const chooseX = (x, array) => {
-  const newArray = [];
-  for (let i = 0; i < x; i += 1) {
+  const set = new Set();
+  while (set.size < 3) {
     const randomIndex = Math.floor(Math.random() * (array.length - 1));
-    newArray.push(array[randomIndex]);
+    set.add(array[randomIndex]);
   }
 
+  const newArray = Array.from(set);
   return newArray;
 };
-
-const categories = [
-  'bottoms',
-  'belts',
-  'bags',
-  'jewelry',
-  'outerwear',
-  'shoes',
-  'tops',
-];
 
 // function to create documents and write to db
 const saveItem = (categoryList, callback) => {
@@ -78,12 +80,15 @@ const saveItem = (categoryList, callback) => {
       Prefix: `fec-imagery/${category}`,
     };
 
+    // s3 call to get all imageData from AWS
     getUrls(bucketInfo, (err, data) => {
       if (err) {
         reject(err);
       } else {
         const dataObj = {};
         const objArray = data.Contents;
+
+        console.log(data.Contents);
 
         dataObj[category] = chooseX(3, createObjArray(objArray));
         resolve(dataObj);
@@ -109,5 +114,10 @@ const saveItem = (categoryList, callback) => {
     });
   });
 };
+
+// uncomment to seed database
+// saveItem(categories, () => {
+//   console.log('success');
+// });
 
 module.exports = { saveItem };

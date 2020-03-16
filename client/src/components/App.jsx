@@ -4,9 +4,9 @@ import exampleDbEntry from '../../../database/exampleDbEntry';
 import Carousel from './Carousel.jsx';
 
 const categories = [
-  'bottoms',
-  'belts',
   'bags',
+  'belts',
+  'bottoms',
   'jewelry',
   'outerwear',
   'shoes',
@@ -33,7 +33,6 @@ class App extends React.Component {
         this.setState({
           imageURLs: imageData,
         });
-
         console.log('successfully got images');
       },
       error: (err) => {
@@ -42,9 +41,11 @@ class App extends React.Component {
     });
   }
 
+  /* re-add this once everything else is done to reduce AWS usage
   componentDidMount() {
     this.getData();
   }
+  */
 
   render() {
     return (
