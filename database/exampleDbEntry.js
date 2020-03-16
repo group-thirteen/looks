@@ -1,5 +1,5 @@
 const exampleDbEntry = {
-	"_id" : ObjectId("5e6f0504f0262ede565750ce"),
+	"_id" : 'ObjectId("5e6f0504f0262ede565750ce")',
 	"bottoms" : [
 		{
 			"url" : "https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/bottoms/da540d04-120e-453b-8b4b-3e48cb65e70f.jpeg",

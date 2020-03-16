@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Carousel = ({ imageData }) => (
-  <div>
-    <button id="left"></button>
+  <div test="carousel">
+    <button id="left" type="button">PREV</button>
     {imageData.map((image) => <img src={image.url} key={image.url} />)}
-    <button id="right"></button>
+
+    {imageData.map((image) => <div key={image.price}>{image.price}</div>)}
+    <button id="right" type="button">NEXT</button>
   </div>
 );
 

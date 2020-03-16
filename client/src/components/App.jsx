@@ -1,8 +1,17 @@
 import React from 'react';
 import $ from 'jquery';
 import exampleDbEntry from '../../../database/exampleDbEntry';
-import categories from '../../../database/categories';
 import Carousel from './Carousel.jsx';
+
+const categories = [
+  'bottoms',
+  'belts',
+  'bags',
+  'jewelry',
+  'outerwear',
+  'shoes',
+  'tops',
+];
 
 class App extends React.Component {
   constructor(props) {
@@ -22,13 +31,15 @@ class App extends React.Component {
       url: '/api/getimageurls',
       success: (imageData) => {
         this.setState({
-        ...this.state,
-        imageURLs: imageData,
-      })},
+          imageURLs: imageData,
+        });
+
+        console.log('successfully got images');
+      },
       error: (err) => {
         console.log(err);
-      }
-    })
+      },
+    });
   }
 
   componentDidMount() {
@@ -39,6 +50,7 @@ class App extends React.Component {
     return (
       <div className='looks' test='looks'>
         {this.state.categories.map(
+          // eslint-disable-next-line comma-dangle
           (category) => <Carousel imageData={this.state.imageURLs[category]} key={category}/>
         )}
       </div>
