@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 const Carousel = ({ imageData }) => (
   <div test="carousel">
     <button id="left" type="button">PREV</button>
-    {imageData.map((image) => <img src={image.url} key={image.url} />)}
-
-    {imageData.map((image) => <div key={image.price}>{image.price}</div>)}
+    {imageData.map((image) => <span key={image.url}>
+      <img src={image.url} key={image.url} /> <div>{image.price}</div></span>)}
     <button id="right" type="button">NEXT</button>
   </div>
 );

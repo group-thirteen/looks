@@ -110,8 +110,4 @@ const saveItem = (categoryList, callback) => {
   });
 };
 
-saveItem(categories, () => {
-  console.log('success');
-});
-
 module.exports = { saveItem };

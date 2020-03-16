@@ -21,4 +21,8 @@ describe('Carousel rendering', () => {
   it('should render images', () => {
     expect(wrapper.find('img')).toExist();
   });
+
+  it('should render as many images are as passed in', () => {
+    expect(wrapper).toContainMatchingElements(exampleDbEntry.bottoms.length, 'img');
+  });
 });

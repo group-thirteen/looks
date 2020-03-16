@@ -1,24 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Carousel from '../../client/src/components/Carousel.jsx';
-import exampleDbEntry from '../../database/exampleDbEntry';
+import App from '../../client/src/components/App.jsx';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<Carousel imageData={exampleDbEntry.bottoms} />);
+  wrapper = shallow(<App />);
 });
 
-describe('Carousel rendering', () => {
-  it('should render the carousel', () => {
-    expect(wrapper.find('[test="carousel"]')).toExist();
+describe('App rendering', () => {
+  it('should render the App', () => {
+    expect(wrapper.find('[test="looks"]')).toExist();
   });
 
-  it('should render two buttons', () => {
-    expect(wrapper).toContainMatchingElements(2, 'button');
-  });
-
-  it('should render images', () => {
-    expect(wrapper.find('img')).toExist();
+  it('should render as many carousels as categories', () => {
+    expect(wrapper).toContainMatchingElements(7, 'Carousel');
   });
 });
