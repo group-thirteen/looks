@@ -22,9 +22,10 @@ class App extends React.Component {
       categories,
     };
 
-    this.getData = this.getData.bind(this);
+    // this.getData = this.getData.bind(this);
   }
 
+  /* re-add this once everything else is done to reduce AWS usage
   getData() {
     $.ajax({
       method: 'GET',
@@ -41,7 +42,6 @@ class App extends React.Component {
     });
   }
 
-  /* re-add this once everything else is done to reduce AWS usage
   componentDidMount() {
     this.getData();
   }
@@ -51,8 +51,9 @@ class App extends React.Component {
     return (
       <div className='looks' test='looks'>
         {this.state.categories.map(
-          // eslint-disable-next-line comma-dangle
-          (category) => <Carousel imageData={this.state.imageURLs[category]} key={category}/>
+          (category) =>
+          // eslint-disable-next-line implicit-arrow-linebreak, comma-dangle
+          <Carousel category={category}imageData={this.state.imageURLs[category]} key={category}/>
         )}
       </div>
     );

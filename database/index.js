@@ -38,15 +38,6 @@ const getUrls = (params, callback) => {
   });
 };
 
-const categories = [
-  'bags',
-  'belts',
-  'bottoms',
-  'jewelry',
-  'outerwear',
-  'shoes',
-  'tops',
-];
 
 // take in data.Contents
 // create array of objects
@@ -116,6 +107,16 @@ const saveItem = (categoryList, callback) => {
 };
 
 // uncomment to seed database
+// const categories = [
+//   'bags',
+//   'belts',
+//   'bottoms',
+//   'jewelry',
+//   'outerwear',
+//   'shoes',
+//   'tops',
+// ];
+
 // saveItem(categories, () => {
 //   console.log('success');
 // });
