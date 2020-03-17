@@ -25,13 +25,13 @@ describe('Likes + Share + Description Bar', () => {
     });
 
     it('should display the correct terminology if only one person loved the look', () => {
-      const onePerson = shallow(<LikeShareDesc likes={1} description={''} />);
+      const onePerson = mount(<LikeShareDesc likes={1} description={''} />);
 
       expect(onePerson.find('.likes')).toHaveText('1 person loves this look');
     });
 
     it('should display nothing if there are no likes', () => {
-      const noLikes = shallow(<LikeShareDesc likes={0} description={''} />);
+      const noLikes = mount(<LikeShareDesc likes={0} description={''} />);
 
       expect(noLikes.find('.likes')).not.toHaveText('this look');
     });
