@@ -23,20 +23,18 @@ describe('Carousel rendering', () => {
   });
 
   it('should register clicks', () => {
-    expect(wrapper.find('#left')).toHaveProp('onClick');
     expect(wrapper.find('#right')).toHaveProp('onClick');
+    expect(wrapper.find('#left')).toHaveProp('onClick');
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
 
     wrapper.find('#right').simulate('click');
-
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[1]);
 
     wrapper.find('#left').simulate('click');
-
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
   });
 
-  it('should not change image if it image is first or last in array', () => {
+  it('should not change image if image is first or last in array', () => {
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
 
     wrapper.find('#left').simulate('click');

@@ -16,6 +16,10 @@ AWS.config.update({ region: 'us-west-1' });
 // each category will be an array of objects
 // each object will include the image url and the price for rendering in carousel
 const itemSchema = mongoose.Schema({
+  username: String,
+  lookDescription: String,
+  likes: Number,
+  lookName: String,
   bottoms: Array,
   belts: Array,
   bags: Array,
@@ -89,6 +93,14 @@ const saveItem = (categoryList, callback) => {
 
   Promise.all(promises).then((values) => {
     const itemObj = {};
+    const randomData = {
+      username: faker.internet.userName(),
+      likes: Math.floor(Math.random() * 7),
+      lookDescription: faker.lorem.sentence(),
+      lookName: faker.random.words().toUpperCase(),
+    };
+
+    Object.assign(itemObj, randomData);
     values.forEach((property) => {
       Object.assign(itemObj, property);
     });

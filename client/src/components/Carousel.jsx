@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card.jsx';
-import exampleDbEntry from '../../../database/exampleDbEntry';
 
 class Carousel extends React.Component {
   constructor(props) {
@@ -38,9 +37,13 @@ class Carousel extends React.Component {
   render() {
     return (
       <div test="carousel" className="carousel">
-        <button id="left" type="button" onClick={this.onClick}>&lt;</button>
+        <span>
+          <button id="left" type="button" onClick={this.onClick}>&lt;</button>
+        </span>
         {<Card product={this.state.currentCard} />}
-        <button id="right" type="button" onClick={this.onClick}>&gt;</button>
+        <span>
+          <button id="right" type="button" onClick={this.onClick}>&gt;</button>
+        </span>
       </div>
     );
   }

@@ -1,16 +1,27 @@
+/* eslint-disable max-len */
+/* eslint-disable comma-dangle */
+/* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
-import $ from 'jquery';
+// import $ from 'jquery';
 import exampleDbEntry from '../../../database/exampleDbEntry';
 import Carousel from './Carousel.jsx';
+import Header from './Header.jsx';
+import LikeShareDesc from './LikeShareDesc.jsx';
 
-const categories = [
-  'bags',
-  'belts',
-  'bottoms',
-  'jewelry',
-  'outerwear',
-  'shoes',
-  'tops',
+const colCats = [
+  [
+    'outerwear',
+    'jewelry',
+    'belts',
+  ],
+  [
+    'tops',
+    'bottoms',
+  ],
+  [
+    'bags',
+    'shoes',
+  ],
 ];
 
 class App extends React.Component {
@@ -18,8 +29,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      imageURLs: exampleDbEntry,
-      categories,
+      lookData: exampleDbEntry,
     };
 
     // this.getData = this.getData.bind(this);
@@ -49,12 +59,16 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='looks' test='looks'>
-        {this.state.categories.map(
-          (category) =>
-          // eslint-disable-next-line implicit-arrow-linebreak, comma-dangle
-          <Carousel category={category}imageData={this.state.imageURLs[category]} key={category}/>
-        )}
+      <div className="service" test="service">
+        <Header title={this.state.lookData.lookName} user={this.state.lookData.username} />
+
+        <div className="looks" test="looks">
+          {colCats.map((columnCat) => <div className="column" key={colCats.indexOf(columnCat)} >
+            {columnCat.map((category) => <Carousel category={category} imageData={this.state.lookData[category]} key={category} className={category} />)}
+          </div>)}
+        </div>
+
+        <LikeShareDesc likes={this.state.lookData.likes} description={this.state.lookData.lookDescription} />
       </div>
     );
   }
