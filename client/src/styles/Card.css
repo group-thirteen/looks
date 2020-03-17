@@ -1,0 +1,10 @@
+.card {
+  position: relative;
+}
+
+.productimg {
+  border: 0;
+  vertical-align: middle;
+  height: 150px;
+  width: 80px;
+}

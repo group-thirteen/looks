@@ -7,6 +7,7 @@ import exampleDbEntry from '../../../database/exampleDbEntry';
 import Carousel from './Carousel.jsx';
 import Header from './Header.jsx';
 import LikeShareDesc from './LikeShareDesc.jsx';
+import styles from '../styles/App.css';
 
 const colCats = [
   [
@@ -59,11 +60,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="service" test="service">
+      <div className={styles.service} test="service">
         <Header title={this.state.lookData.lookName} user={this.state.lookData.username} />
 
-        <div className="looks" test="looks">
-          {colCats.map((columnCat) => <div className="column" key={colCats.indexOf(columnCat)} >
+        <div className={styles.looks} test="looks">
+          {colCats.map((columnCat) => <div className={styles.column} key={colCats.indexOf(columnCat)} >
             {columnCat.map((category) => <Carousel category={category} imageData={this.state.lookData[category]} key={category} className={category} />)}
           </div>)}
         </div>

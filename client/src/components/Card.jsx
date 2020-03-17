@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../styles/Card.css';
 
 const Card = (props) => (
-  <div className="card" test="card">
-    <img className="productimg" src={props.product.url} />
+  <div className={styles.card} test="card">
+    <img className={styles.productimg} src={props.product.url} />
     <p>{props.product.price}</p>
   </div>
 );
