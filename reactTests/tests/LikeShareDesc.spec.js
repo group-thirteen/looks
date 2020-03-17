@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import LikeShareDesc from '../../client/src/components/LikeShareDesc.jsx';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<LikeShareDesc likes={4} description={'test'} />);
+  wrapper = mount(<LikeShareDesc likes={4} description={'test'} />);
 });
 
 describe('Likes + Share + Description Bar', () => {
@@ -15,7 +15,7 @@ describe('Likes + Share + Description Bar', () => {
     });
 
     it('should render a like and share button', () => {
-      expect(wrapper).toHaveMatchingComponents(2, 'img');
+      expect(wrapper).toContainMatchingElements(2, 'img');
     });
   });
 

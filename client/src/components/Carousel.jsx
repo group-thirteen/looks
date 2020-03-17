@@ -25,7 +25,9 @@ class Carousel extends React.Component {
           currentCard: this.props.imageData[currentIdx - 1],
         });
       }
-    } else if (id === 'right') {
+    }
+
+    if (id === 'right') {
       if (currentIdx < this.props.imageData.length - 1) {
         this.setState({
           currentCard: this.props.imageData[currentIdx + 1],
