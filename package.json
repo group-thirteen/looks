@@ -9,7 +9,8 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "test": "jest --config ./jest.config.js --watch ./reactTests/tests",
+    "test": "jest --config ./jest.config.js ./reactTests/tests",
+    "test-watch": "jest --config ./jest.config.js --watch ./reactTests/tests",
     "test-coverage": "jest --coverage",
     "seed": "node ./database/index.js"
   },
