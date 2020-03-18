@@ -1,19 +1,74 @@
+/* eslint-disable max-len */
+/* eslint-disable comma-dangle */
+/* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
+// import $ from 'jquery';
+import exampleDbEntry from '../../../database/exampleDbEntry';
+import Carousel from './Carousel.jsx';
+import Header from './Header.jsx';
+import LikeShareDesc from './LikeShareDesc.jsx';
+
+const colCats = [
+  [
+    'outerwear',
+    'jewelry',
+    'belts',
+  ],
+  [
+    'tops',
+    'bottoms',
+  ],
+  [
+    'bags',
+    'shoes',
+  ],
+];
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      imageURL: 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/bags/021bb968-fa64-41d3-a69d-129ded1c262e.jpeg',
-      imageFolder: 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/bags',
+      lookData: exampleDbEntry,
     };
+
+    // this.getData = this.getData.bind(this);
   }
+
+  /* re-add this once everything else is done to reduce AWS usage
+  getData() {
+    $.ajax({
+      method: 'GET',
+      url: '/api/getimageurls',
+      success: (imageData) => {
+        this.setState({
+          imageURLs: imageData,
+        });
+        console.log('successfully got images');
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
+
+  componentDidMount() {
+    this.getData();
+  }
+  */
 
   render() {
     return (
-      <div>
-        <img src={this.state.imageURL} />
+      <div className="service" test="service">
+        <Header title={this.state.lookData.lookName} user={this.state.lookData.username} />
+
+        <div className="looks" test="looks">
+          {colCats.map((columnCat) => <div className="column" key={colCats.indexOf(columnCat)} >
+            {columnCat.map((category) => <Carousel category={category} imageData={this.state.lookData[category]} key={category} className={category} />)}
+          </div>)}
+        </div>
+
+        <LikeShareDesc likes={this.state.lookData.likes} description={this.state.lookData.lookDescription} />
       </div>
     );
   }
