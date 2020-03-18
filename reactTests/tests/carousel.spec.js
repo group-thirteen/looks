@@ -18,8 +18,12 @@ describe('Carousel rendering', () => {
     expect(wrapper).toContainMatchingElements(2, 'button');
   });
 
-  it('should render one card', () => {
-    expect(wrapper.find('Card')).toExist();
+  it('should render one image', () => {
+    expect(wrapper.find('img')).toExist();
+  });
+
+  it('should render the price', () => {
+    expect(wrapper.find('[test="price"]')).toExist();
   });
 
   it('should register clicks', () => {

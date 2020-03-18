@@ -21,25 +21,25 @@ describe('Likes + Share + Description Bar', () => {
 
   describe('likes', () => {
     it('should display the correct number of likes', () => {
-      expect(wrapper.find('.likes')).toHaveText('4 love this look');
+      expect(wrapper.find('[test="likes"]')).toHaveText('4 love this look');
     });
 
     it('should display the correct terminology if only one person loved the look', () => {
       const onePerson = mount(<LikeShareDesc likes={1} description={''} />);
 
-      expect(onePerson.find('.likes')).toHaveText('1 person loves this look');
+      expect(onePerson.find('[test="likes"]')).toHaveText('1 person loves this look');
     });
 
     it('should display nothing if there are no likes', () => {
       const noLikes = mount(<LikeShareDesc likes={0} description={''} />);
 
-      expect(noLikes.find('.likes')).not.toHaveText('this look');
+      expect(noLikes.find('[test="likes"]')).not.toHaveText('this look');
     });
   });
 
   describe('Description', () => {
     it('should render the correct description', () => {
-      expect(wrapper.find('.description')).toHaveText('test');
+      expect(wrapper.find('[test="description"]')).toHaveText('test');
     });
   });
 });

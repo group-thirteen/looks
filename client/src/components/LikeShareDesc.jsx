@@ -22,17 +22,20 @@ class LikeShareDesc extends React.Component {
 
   render() {
     return (
-      <div test="likeDescBar">
-        <div className={styles.likeShare}>
-            <img className={styles.icons} src='https://i.pinimg.com/originals/d4/34/3f/d4343ffcd8fa017e790e6e9ab41a4411.png' height="24" width="24" />
-            <img className={styles.icons} src='https://www.pngkey.com/png/full/207-2070780_png-file-apple-share-icon-svg.png' height="24" width="17" />
+      <div test="likeDescBar" className={styles.likeDesc}>
+        <div className={styles.likeShare} test="likeshare">
+            <img className={styles.icons} test="likebutton" src='https://i.pinimg.com/originals/d4/34/3f/d4343ffcd8fa017e790e6e9ab41a4411.png' />
+            <img className={styles.icons} test="sharebutton" src='https://www.pngkey.com/png/full/207-2070780_png-file-apple-share-icon-svg.png' />
         </div>
-        <span className="likes">
+
+        <span className={styles.likes} test="likes">
           {numLikeCheck(this.state.likes)}
         </span>
-        <div className="description">
+
+        <div className={styles.description} test="description">
           {this.props.description}
         </div>
+
       </div>
     );
   }

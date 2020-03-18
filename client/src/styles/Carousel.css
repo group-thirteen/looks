@@ -1,0 +1,51 @@
+.carousel {
+  position: relative;
+  width: 140px;
+  max-height: 350px;
+  display: grid;
+  grid-template-columns: 10px 8px auto 8px 10px;
+  grid-template-rows: 1fr 40px 1fr 40px 40px;
+}
+
+.card {
+  position: relative;
+}
+
+.productimg {
+  border: 0;
+  margin: 0 auto;
+  grid-row: 1 / 4;
+  grid-column: 2 / 5;
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 270px;
+  z-index: 0;
+}
+
+.price {
+  text-align: center;
+  grid-row: 4;
+  grid-column: 3;
+}
+
+.button {
+  grid-row: 2;
+  z-index: 1;
+  background: none;
+  border: none;
+  transform: scale(1, 1.5);
+  font-size: 16px;
+  font-weight: lighter;
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.leftbutton {
+  grid-column: 1;
+}
+
+.rightbutton {
+  grid-column: 5;
+}
