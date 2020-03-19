@@ -119,10 +119,10 @@ const exampleDbEntry = {
 			"price" : "$814.00"
 		}
 	],
-	"username" : "Eddie_Greenfelder",
+	"username" : "nordstrom",
 	"likes" : 4,
-	"lookDescription" : "Debitis suscipit deleniti non vel incidunt tempora praesentium dolore.",
-	"lookName": "TECHNOLOGIES ALASKA",
+	"lookDescription" : "This look will make you look dope.",
+	"lookName": "DOPE LOOK",
 	"__v" : 0
 }
 

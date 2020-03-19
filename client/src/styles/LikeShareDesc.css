@@ -1,0 +1,29 @@
+.likeDesc {
+  border-top: 1px solid #e3e3e3;
+  height: 100px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.likeShare {
+  margin-top: 13px;
+  display: grid;
+}
+
+.icons {
+  margin-right: 15px;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+}
+
+.likes {
+  display: inline-block;
+  font-weight: lighter;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: center;
+}
