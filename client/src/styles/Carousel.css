@@ -1,51 +1,28 @@
 .carousel {
   position: relative;
+  margin: 0 auto 15px;
   width: 140px;
   max-height: 350px;
+  min-height: 200px;
   display: grid;
-  grid-template-columns: 10px 8px auto 8px 10px;
-  grid-template-rows: 1fr 40px 1fr 40px 40px;
-}
-
-.card {
-  position: relative;
+  grid-template-columns: 10px auto 10px;
+  grid-template-rows: 1fr 40px 1fr 40px 30px;
 }
 
 .productimg {
   border: 0;
   margin: 0 auto;
   grid-row: 1 / 4;
-  grid-column: 2 / 5;
-  vertical-align: middle;
+  grid-column: 2;
   max-width: 100%;
-  max-height: 270px;
+  max-height: 260px;
   z-index: 0;
+  cursor: pointer;
 }
 
 .price {
   text-align: center;
   grid-row: 4;
-  grid-column: 3;
-}
-
-.button {
-  grid-row: 2;
-  z-index: 1;
-  background: none;
-  border: none;
-  transform: scale(1, 1.5);
-  font-size: 16px;
-  font-weight: lighter;
-}
-
-.button:focus {
-  outline: 0;
-}
-
-.leftbutton {
-  grid-column: 1;
-}
-
-.rightbutton {
-  grid-column: 5;
+  grid-column: 2;
+  cursor: pointer;
 }

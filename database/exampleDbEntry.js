@@ -121,7 +121,7 @@ const exampleDbEntry = {
 	],
 	"username" : "nordstrom",
 	"likes" : 4,
-	"lookDescription" : "This look will make you look dope.",
+	"lookDescription" : "This dope look will make you look dope.",
 	"lookName": "DOPE LOOK",
 	"__v" : 0
 }

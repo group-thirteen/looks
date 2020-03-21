@@ -1,10 +1,8 @@
-/* eslint-disable max-len */
 /* eslint-disable comma-dangle */
-/* eslint-disable implicit-arrow-linebreak */
 import React from 'react';
 // import $ from 'jquery';
 import exampleDbEntry from '../../../database/exampleDbEntry';
-import Carousel from './Carousel.jsx';
+import Column from './Column.jsx';
 import Header from './Header.jsx';
 import LikeShareDesc from './LikeShareDesc.jsx';
 import styles from '../styles/App.css';
@@ -61,15 +59,21 @@ class App extends React.Component {
   render() {
     return (
       <div className={styles.service} test="service">
-        <Header title={this.state.lookData.lookName} user={this.state.lookData.username} />
+        <Header
+          title={this.state.lookData.lookName}
+          user={this.state.lookData.username} />
 
         <div className={styles.looks} test="looks">
-          {colCats.map((columnCat) => <div className={styles.column} key={colCats.indexOf(columnCat)} >
-            {columnCat.map((category) => <Carousel category={category} imageData={this.state.lookData[category]} key={category} className={category} />)}
-          </div>)}
+          {colCats.map((columnCat, index) => <Column
+            categories={columnCat}
+            productData={this.state.lookData}
+            key={index}
+            index={index} />)}
         </div>
 
-        <LikeShareDesc likes={this.state.lookData.likes} description={this.state.lookData.lookDescription} />
+        <LikeShareDesc
+          likes={this.state.lookData.likes}
+          description={this.state.lookData.lookDescription} />
       </div>
     );
   }

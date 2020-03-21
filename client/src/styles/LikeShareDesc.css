@@ -1,29 +1,47 @@
 .likeDesc {
   border-top: 1px solid #e3e3e3;
-  height: 100px;
   width: 95%;
-  margin: 0 auto;
+  margin: 0 auto 30px;
+  grid-row: 3;
 }
 
 .likeShare {
   margin-top: 13px;
   display: grid;
+  grid-template-columns: 90px auto 150px;
 }
 
-.icons {
+.iconbar {
+  display: flexbox;
+  flex-direction: row;
+  grid-column: 1;
+}
+
+.likeicon {
   margin-right: 15px;
   height: 24px;
   width: 24px;
-  display: inline-block;
+  cursor: pointer;
+}
+
+.shareicon {
+  height: 24px;
+  width: 17px;
+  cursor: pointer;
 }
 
 .likes {
   display: inline-block;
   font-weight: lighter;
+  text-align: right;
+  padding: 0 auto;
+  margin: 0 20px 0 0;
+  grid-column: 3;
 }
 
 .description {
   font-size: 14px;
+  margin: 17px;
   font-weight: lighter;
   text-align: center;
 }

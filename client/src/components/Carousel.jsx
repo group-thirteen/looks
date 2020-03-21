@@ -1,6 +1,8 @@
 /* eslint-disable arrow-body-style */
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from './Button.jsx';
+import Slider from './Slider.jsx';
 import styles from '../styles/Carousel.css';
 
 class Carousel extends React.Component {
@@ -71,12 +73,24 @@ class Carousel extends React.Component {
   render() {
     return (
       <div test="carousel" className={styles.carousel} onMouseEnter={this.mouseEnter} onMouseLeave={this.mouseExit}>
-        {this.state.hovered ? <button id="left" type="button" onClick={this.onClick} className={[styles.button, styles.leftbutton].join(' ')}>&lt;</button> : null}
+        {this.state.hovered ? <Button
+          test='left'
+          id='left'
+          clickHandler={this.onClick}
+          index={this.props.imageData.indexOf(this.state.currentCard)} />
+          : null}
 
         <img test="productimg" src={this.state.currentCard.url} className={styles.productimg}/>
         <p test="price" className={styles.price}>{this.state.currentCard.price}</p>
 
-        {this.state.hovered ? <button id="right" type="button" onClick={this.onClick} className={[styles.button, styles.rightbutton].join(' ')}>&gt;</button> : null}
+        {this.state.hovered ? <Button
+          test='right'
+          id='right'
+          clickHandler={this.onClick}
+          index={this.props.imageData.indexOf(this.state.currentCard)} />
+          : null}
+
+        <Slider index={this.props.imageData.indexOf(this.state.currentCard)} />
       </div>
     );
   }

@@ -1,11 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import App from '../../client/src/components/App.jsx';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = mount(<App />);
+  wrapper = shallow(<App />);
 });
 
 describe('App rendering', () => {
@@ -13,7 +13,15 @@ describe('App rendering', () => {
     expect(wrapper.find('[test="looks"]')).toExist();
   });
 
-  it('should render as many carousels as categories', () => {
-    expect(wrapper).toContainMatchingElements(7, 'Carousel');
+  it('should render three columns', () => {
+    expect(wrapper).toContainMatchingElements(3, 'Column');
+  });
+
+  it('should render the header', () => {
+    expect(wrapper.find('Header')).toExist();
+  });
+
+  it('should render the like + share + description bar', () => {
+    expect(wrapper.find('LikeShareDesc')).toExist();
   });
 });
