@@ -73,7 +73,8 @@ class App extends React.Component {
 
         <LikeShareDesc
           likes={this.state.lookData.likes}
-          description={this.state.lookData.lookDescription} />
+          description={this.state.lookData.lookDescription}
+          lookId={this.state.lookData.id} />
       </div>
     );
   }
