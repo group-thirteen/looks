@@ -44,7 +44,9 @@ describe('Carousel rendering', () => {
 
     expect(wrapper).toHaveState('hovered', false);
   });
+});
 
+describe('Button behavior', () => {
   it('should register clicks', () => {
     wrapper.setState((state) => (
       {
@@ -53,14 +55,14 @@ describe('Carousel rendering', () => {
       }
     ));
 
-    expect(wrapper.find('#right')).toHaveProp('onClick');
-    expect(wrapper.find('#left')).toHaveProp('onClick');
+    expect(wrapper.find('[test="right"]')).toHaveProp('clickHandler');
+    expect(wrapper.find('[test="left"]')).toHaveProp('clickHandler');
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
 
-    wrapper.find('#right').simulate('click');
+    wrapper.find('[test="right"]').simulate('click');
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[1]);
 
-    wrapper.find('#left').simulate('click');
+    wrapper.find('[test="left"]').simulate('click');
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
   });
 
@@ -74,7 +76,7 @@ describe('Carousel rendering', () => {
 
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
 
-    wrapper.find('#left').simulate('click');
+    wrapper.find('[test="left"]').simulate('click');
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
 
     wrapper.setState(() => (
@@ -84,7 +86,7 @@ describe('Carousel rendering', () => {
       }
     ));
 
-    wrapper.find('#right').simulate('click');
+    wrapper.find('[test="right"]').simulate('click');
     expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[2]);
   });
 });

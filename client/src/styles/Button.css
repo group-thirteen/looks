@@ -1,0 +1,27 @@
+.left {
+  grid-column: 1;
+}
+
+.right {
+  grid-column: 3;
+}
+
+.left, .right {
+  grid-row: 2;
+  z-index: 1;
+  font-family: 'Courier';
+  background: none;
+  border: none;
+  transform: scale(1, 2.5);
+  font-size: 13px;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.left:focus, .right:focus {
+  outline: 0;
+}
+
+.grey {
+  color: #9b9b9b;
+}

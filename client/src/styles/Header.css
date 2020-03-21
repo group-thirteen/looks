@@ -3,12 +3,14 @@
   border-bottom: 1px solid #e3e3e3;
   width: 95%;
   margin: 0 auto;
+  grid-row: 1;
 }
 
 .lookname {
   font-size: 17px;
   font-weight: lighter;
   line-height: 26px;
+  cursor: pointer;
 }
 
 .username {
@@ -20,4 +22,9 @@
 .underline {
   padding-bottom: 2px;
   border-bottom: 1px solid #393939;
+}
+
+.underline:hover {
+  border-bottom: 2px solid #393939;
+  cursor: pointer;
 }

@@ -1,0 +1,31 @@
+.bold, .normal {
+  border-radius: 50%;
+  margin: auto 4px auto 0;
+  height: 5px;
+  width: 5px;
+  transition: background .2s ease-in,transform .2s ease-in;
+  transition-property: background, transform;
+  transition-duration: 0.2s, 0.2s;
+  transition-timing-function: ease-in, ease-in;
+  transition-delay: 0s, 0s;
+}
+
+.bold {
+  border: 4px #393939;
+  background: #393939;
+  transform: scale(1.33);
+}
+
+.normal {
+  border: 2px #7c7c7c;
+  background: #7c7c7c;
+}
+
+.slider {
+  grid-column: 2;
+  grid-row: 5;
+  display: flex;
+  flex-direction: row;
+  margin: auto auto;
+  vertical-align: middle;
+}
