@@ -98,6 +98,7 @@ const saveItem = (categoryList, callback) => {
       likes: Math.floor(Math.random() * 7),
       lookDescription: faker.lorem.sentence(),
       lookName: faker.random.words().toUpperCase(),
+      lookUrl: 'http://localhost:3000',
     };
 
     Object.assign(itemObj, randomData);
@@ -118,7 +119,18 @@ const saveItem = (categoryList, callback) => {
   });
 };
 
-// uncomment to seed database
+const readDb = (callback) => {
+  Item.find({}, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(result);
+      callback(null, result[0]);
+    }
+  }).limit(1);
+};
+
+// db seeding script
 // const categories = [
 //   'bags',
 //   'belts',
@@ -133,4 +145,4 @@ const saveItem = (categoryList, callback) => {
 //   console.log('success');
 // });
 
-module.exports = { saveItem };
+module.exports = { saveItem, readDb };

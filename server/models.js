@@ -11,7 +11,7 @@ const categories = [
 ];
 
 const getImg = (req, callback) => {
-  db.saveItem(categories, (err, allImageUrls) => {
+  db.readDb((err, allImageUrls) => {
     if (err) {
       console.log('database error', err);
     } else {

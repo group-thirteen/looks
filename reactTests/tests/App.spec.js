@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import App from '../../client/src/components/App.jsx';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<App />);
+  wrapper = mount(<App />);
 });
 
 describe('App rendering', () => {
@@ -23,5 +23,25 @@ describe('App rendering', () => {
 
   it('should render the like + share + description bar', () => {
     expect(wrapper.find('LikeShareDesc')).toExist();
+  });
+
+  it('should have state showModal', () => {
+    expect(wrapper).toHaveState('showModal', false);
+  });
+
+  it('should render the Modal upon clicking the share icon', () => {
+    expect(wrapper.find('[test="modal"]')).not.toExist();
+
+    wrapper.find('[test="sharebutton"]').simulate('click');
+
+    expect(wrapper.find('Modal')).toExist();
+  });
+
+  it('should hide the Modal upon clicking close', () => {
+    wrapper.find('[test="sharebutton"]').simulate('click');
+    expect(wrapper.find('Modal')).toExist();
+
+    wrapper.find('[test="closeButton"]').simulate('click');
+    expect(wrapper.find('Modal')).not.toExist();
   });
 });

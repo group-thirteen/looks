@@ -10,7 +10,7 @@ class Carousel extends React.Component {
     super(props);
 
     this.state = {
-      currentCard: this.props.imageData[0],
+      currentIdx: 0,
       hovered: false,
     };
 
@@ -23,13 +23,12 @@ class Carousel extends React.Component {
     event.preventDefault();
 
     const { id } = event.target;
-    const currentIdx = this.props.imageData.indexOf(this.state.currentCard);
 
     if (id === 'left') {
-      if (currentIdx > 0) {
+      if (this.state.currentIdx > 0) {
         this.setState((state) => {
           return {
-            currentCard: this.props.imageData[currentIdx - 1],
+            currentIdx: state.currentIdx - 1,
             hovered: state.hovered,
           };
         });
@@ -37,10 +36,10 @@ class Carousel extends React.Component {
     }
 
     if (id === 'right') {
-      if (currentIdx < this.props.imageData.length - 1) {
+      if (this.state.currentIdx < this.props.imageData.length - 1) {
         this.setState((state) => {
           return {
-            currentCard: this.props.imageData[currentIdx + 1],
+            currentIdx: state.currentIdx + 1,
             hovered: state.hovered,
           };
         });
@@ -53,7 +52,7 @@ class Carousel extends React.Component {
 
     this.setState((state) => {
       return {
-        currentCard: state.currentCard,
+        currentIdx: state.currentIdx,
         hovered: true,
       };
     });
@@ -64,7 +63,7 @@ class Carousel extends React.Component {
 
     this.setState((state) => {
       return {
-        currentCard: state.currentCard,
+        currentIdx: state.currentIdx,
         hovered: false,
       };
     });
@@ -77,20 +76,20 @@ class Carousel extends React.Component {
           test='left'
           id='left'
           clickHandler={this.onClick}
-          index={this.props.imageData.indexOf(this.state.currentCard)} />
+          index={this.state.currentIdx} />
           : null}
 
-        <img test="productimg" src={this.state.currentCard.url} className={styles.productimg}/>
-        <p test="price" className={styles.price}>{this.state.currentCard.price}</p>
+        <img test="productimg" src={this.props.imageData[this.state.currentIdx].url} className={styles.productimg}/>
+        <p test="price" className={styles.price}>{this.props.imageData[this.state.currentIdx].price}</p>
 
         {this.state.hovered ? <Button
           test='right'
           id='right'
           clickHandler={this.onClick}
-          index={this.props.imageData.indexOf(this.state.currentCard)} />
+          index={this.state.currentIdx} />
           : null}
 
-        <Slider index={this.props.imageData.indexOf(this.state.currentCard)} />
+        <Slider index={this.state.currentIdx} />
       </div>
     );
   }

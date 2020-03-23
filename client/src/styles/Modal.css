@@ -1,0 +1,11 @@
+.modal {
+  z-index: 101;
+  font-family: 'Ubuntu', sans-serif;
+  position: fixed;
+  width: 75%;
+  height: 40%;
+  background-color: #ffffff;
+  border: 1px solid #e3e3e3;
+  top: 10%;
+  left: 12.5%;
+}
