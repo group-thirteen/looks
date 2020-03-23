@@ -120,9 +120,10 @@ const exampleDbEntry = {
 		}
 	],
 	"username" : "nordstrom",
-	"likes" : 4,
+	"likes" : 3,
 	"lookDescription" : "This dope look will make you look dope.",
 	"lookName": "DOPE LOOK",
+	"lookUrl": "http://localhost:3000",
 	"__v" : 0
 }
 

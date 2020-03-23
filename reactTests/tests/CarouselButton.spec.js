@@ -50,43 +50,43 @@ describe('Button behavior', () => {
   it('should register clicks', () => {
     wrapper.setState((state) => (
       {
-        currentCard: state.currentCard,
+        currentIdx: state.currentIdx,
         hovered: true,
       }
     ));
 
     expect(wrapper.find('[test="right"]')).toHaveProp('clickHandler');
     expect(wrapper.find('[test="left"]')).toHaveProp('clickHandler');
-    expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
+    expect(wrapper).toHaveState('currentIdx', 0);
 
     wrapper.find('[test="right"]').simulate('click');
-    expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[1]);
+    expect(wrapper).toHaveState('currentIdx', 1);
 
     wrapper.find('[test="left"]').simulate('click');
-    expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
+    expect(wrapper).toHaveState('currentIdx', 0);
   });
 
   it('should not change image if image is first or last in array', () => {
     wrapper.setState((state) => (
       {
-        currentCard: state.currentCard,
+        currentIdx: state.currentIdx,
         hovered: true,
       }
     ));
 
-    expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
+    expect(wrapper).toHaveState('currentIdx', 0);
 
     wrapper.find('[test="left"]').simulate('click');
-    expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[0]);
+    expect(wrapper).toHaveState('currentIdx', 0);
 
     wrapper.setState(() => (
       {
-        currentCard: exampleDbEntry.bottoms[2],
+        currentIdx: 2,
         hovered: true,
       }
     ));
 
     wrapper.find('[test="right"]').simulate('click');
-    expect(wrapper).toHaveState('currentCard', exampleDbEntry.bottoms[2]);
+    expect(wrapper).toHaveState('currentIdx', 2);
   });
 });
