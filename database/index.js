@@ -105,7 +105,7 @@ const readDb = (callback) => {
       console.log(result);
       callback(null, result[0]);
     }
-  }).limit(1);
+  }).limit(1).sort({ _id: -1 });
 };
 
 module.exports = { seedDb, readDb };
