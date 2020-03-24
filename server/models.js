@@ -1,7 +1,7 @@
 const db = require('../database');
 
 const getImg = (req, callback) => {
-  db.seedDb((err, allImageUrls) => {
+  db.readDb((err, allImageUrls) => {
     if (err) {
       console.log('database error', err);
     } else {

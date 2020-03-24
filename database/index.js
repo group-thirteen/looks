@@ -53,7 +53,7 @@ const chooseX = (x, array) => {
 };
 
 // create new db entry
-const seedDb = (callback) => {
+const seedDb = () => {
   fs.readFile(path.join(__dirname, 'fakeData.json'), 'utf8', (err, result) => {
     if (err) {
       console.log(err);
@@ -90,12 +90,22 @@ const seedDb = (callback) => {
         if (error) {
           console.log(error);
         } else {
-          console.log(`Successful write of item ${item._id}`);
-          callback(null, data);
+          console.log(`Successful write of item ${item._id}`, data);
         }
       });
     }
   });
 };
 
-module.exports = { seedDb };
+const readDb = (callback) => {
+  Item.find({}, (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(result);
+      callback(null, result[0]);
+    }
+  }).limit(1).sort({ _id: -1 });
+};
+
+module.exports = { seedDb, readDb };
