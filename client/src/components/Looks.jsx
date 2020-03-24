@@ -1,7 +1,7 @@
 /* eslint-disable comma-dangle */
 import React from 'react';
 import $ from 'jquery';
-import exampleDbEntry from '../../../database/exampleDbEntry';
+import dummyObj from '../../../database/dummyObj.js';
 import Column from './Column.jsx';
 import Header from './Header.jsx';
 import LikeShareDesc from './LikeShareDesc.jsx';
@@ -29,7 +29,7 @@ class Looks extends React.Component {
     super(props);
 
     this.state = {
-      lookData: exampleDbEntry,
+      lookData: dummyObj,
       showModal: false,
     };
 
