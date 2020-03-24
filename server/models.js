@@ -1,15 +1,5 @@
 const db = require('../database');
 
-const categories = [
-  'bottoms',
-  'belts',
-  'bags',
-  'jewelry',
-  'outerwear',
-  'shoes',
-  'tops',
-];
-
 const getImg = (req, callback) => {
   db.seedDb((err, allImageUrls) => {
     if (err) {
