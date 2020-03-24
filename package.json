@@ -12,7 +12,7 @@
     "test": "jest --config ./jest.config.js ./reactTests/tests",
     "test-watch": "jest --config ./jest.config.js --watch ./reactTests/tests",
     "test-coverage": "jest --coverage",
-    "seed": "node ./database/index.js"
+    "seed": "node -e \"require('./database/index.js').seedDb()\""
   },
   "dependencies": {
     "@babel/core": "^7.8.7",
