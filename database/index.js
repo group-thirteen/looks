@@ -1,17 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 const mongoose = require('mongoose');
-const AWS = require('aws-sdk');
 const faker = require('faker');
+const fs = require('fs');
+const path = require('path');
 
 mongoose.connect('mongodb://localhost/products',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-
-const s3 = new AWS.S3({ apiVersion: '2006-03-01' });
-
-AWS.config.update({ region: 'us-west-1' });
 
 // each category will be an array of objects
 // each object will include the image url and the price for rendering in carousel
@@ -31,19 +28,7 @@ const itemSchema = mongoose.Schema({
 
 const Item = mongoose.model('Item', itemSchema);
 
-// interface with S3 to get image urls
-const getUrls = (params, callback) => {
-  s3.listObjectsV2(params, (err, data) => {
-    if (err) {
-      console.log(err);
-    } else {
-      callback(null, data);
-    }
-  });
-};
-
-
-// take in data.Contents
+// take in array of objects, returns array of objects
 // create array of objects
 const createObjArray = (itemList) => {
   const objArray = itemList.map((item) => ({
@@ -67,82 +52,50 @@ const chooseX = (x, array) => {
   return newArray;
 };
 
-// function to create documents and write to db
-const saveItem = (categoryList, callback) => {
-  const promises = categoryList.map((category) => new Promise((resolve, reject) => {
-    const bucketInfo = {
-      Bucket: 'hrsf126-looks-fec',
-      Prefix: `fec-imagery/${category}`,
-    };
-
-    // s3 call to get all imageData from AWS
-    getUrls(bucketInfo, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        const dataObj = {};
-        const objArray = data.Contents;
-
-        console.log(data.Contents);
-
-        dataObj[category] = chooseX(3, createObjArray(objArray));
-        resolve(dataObj);
-      }
-    });
-  }));
-
-  Promise.all(promises).then((values) => {
-    const itemObj = {};
-    const randomData = {
-      username: faker.internet.userName(),
-      likes: Math.floor(Math.random() * 7),
-      lookDescription: faker.lorem.sentence(),
-      lookName: faker.random.words().toUpperCase(),
-      lookUrl: 'http://localhost:3000',
-    };
-
-    Object.assign(itemObj, randomData);
-    values.forEach((property) => {
-      Object.assign(itemObj, property);
-    });
-
-    const item = new Item(itemObj);
-
-    item.save((err, result) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(`Successful write of item ${item._id}`);
-        callback(null, result);
-      }
-    });
-  });
-};
-
-const readDb = (callback) => {
-  Item.find({}, (err, result) => {
+// create new db entry
+const seedDb = (callback) => {
+  fs.readFile(path.join(__dirname, 'fakeData.json'), 'utf8', (err, result) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(result);
-      callback(null, result[0]);
+      const itemObj = {};
+      const nestedArray = JSON.parse(result);
+
+      const categories = [
+        'bottoms',
+        'shoes',
+        'tops',
+        'belts',
+        'jewelry',
+        'bags',
+        'outerwear',
+      ];
+
+      const randomData = {
+        username: faker.internet.userName(),
+        likes: Math.floor(Math.random() * 7),
+        lookDescription: faker.lorem.sentence(),
+        lookName: faker.random.words().toUpperCase(),
+      };
+
+      Object.assign(itemObj, randomData);
+
+      for (let i = 0; i < categories.length; i += 1) {
+        itemObj[categories[i]] = chooseX(3, createObjArray(nestedArray[i]));
+      }
+
+      const item = new Item(itemObj);
+
+      item.save((error, data) => {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(`Successful write of item ${item._id}`);
+          callback(null, data);
+        }
+      });
     }
-  }).limit(1);
+  });
 };
 
-// db seeding script
-// const categories = [
-//   'bags',
-//   'belts',
-//   'bottoms',
-//   'jewelry',
-//   'outerwear',
-//   'shoes',
-//   'tops',
-// ];
-
-// saveItem(categories, () => {
-//   console.log('success');
-// });
-
-module.exports = { saveItem, readDb };
+module.exports = { seedDb };

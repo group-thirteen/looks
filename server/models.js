@@ -11,7 +11,7 @@ const categories = [
 ];
 
 const getImg = (req, callback) => {
-  db.readDb((err, allImageUrls) => {
+  db.seedDb((err, allImageUrls) => {
     if (err) {
       console.log('database error', err);
     } else {
