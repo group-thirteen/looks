@@ -1,15 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import App from '../../client/src/components/App.jsx';
+import Looks from '../../client/src/components/Looks.jsx';
 
 let wrapper;
 
 beforeEach(() => {
-  wrapper = mount(<App />);
+  wrapper = mount(<Looks />);
 });
 
-describe('App rendering', () => {
-  it('should render the App', () => {
+describe('Looks rendering', () => {
+  it('should render the Looks', () => {
     expect(wrapper.find('[test="looks"]')).toExist();
   });
 
