@@ -7,12 +7,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "react-dev": "webpack -d --watch",
     "test": "jest --config ./jest.config.js ./reactTests/tests",
     "test-watch": "jest --config ./jest.config.js --watch ./reactTests/tests",
     "test-coverage": "jest --coverage",
-    "seed": "node -e \"require('./database/index.js').seedDb()\""
+    "seed": "node -e \"require('./database/index.js').seedDb()\"",
+    "docker": "npm run seed & npm run start"
   },
   "dependencies": {
     "@babel/core": "^7.8.7",

@@ -4,7 +4,7 @@ const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
 
-mongoose.connect('mongodb://localhost/products',
+mongoose.connect('mongodb://database:27017/products',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
