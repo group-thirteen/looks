@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import PropTypes from 'prop-types';
 import styles from '../styles/LikeShareDesc.css';
 
@@ -10,6 +11,9 @@ const numLikeCheck = (num) => {
   return null;
 };
 
+const unLiked = 'https://i.pinimg.com/originals/d4/34/3f/d4343ffcd8fa017e790e6e9ab41a4411.png';
+const likedIcon = 'https://lh3.googleusercontent.com/proxy/hafLtuHjSe57SncJugosmTOQtpFE0HovjOx88mwTEUGihnErKzIuaWYOqE5rVjLt09w98ZhXfk1GnCbWj4a4zMIWH-gORQxr5JsdpCmypjRP9etlXbcZor8U0EknK5I00xkKb2u6oAexHdadZ4dIZ4ge_MNuYI0';
+
 class LikeShareDesc extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +21,32 @@ class LikeShareDesc extends React.Component {
     this.state = {
       liked: false,
     };
+
+    this.likeLook = this.likeLook.bind(this);
+  }
+
+  likeLook(event) {
+    event.preventDefault();
+
+    this.setState((state) => (
+      {liked: !state.liked}
+    ));
+    
+    $.ajax({
+      method: 'POST',
+      url: '/api/updateLikes',
+      data: {
+        lookId: this.props.lookId,
+        updateDirection: this.state.liked ? 'down' : 'up',
+      },
+      success: (successMessage) => {
+        console.log(`Successfully updated document ${successMessage}`);
+        this.props.update(this.props.lookId);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   render() {
@@ -28,7 +58,8 @@ class LikeShareDesc extends React.Component {
             <img
             className={styles.likeicon}
             test="likebutton"
-            src='https://i.pinimg.com/originals/d4/34/3f/d4343ffcd8fa017e790e6e9ab41a4411.png' />
+            onClick={this.likeLook}
+            src= {this.state.liked ? likedIcon : unLiked}/>
 
             <img
             className={styles.shareicon}

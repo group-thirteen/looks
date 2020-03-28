@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import Looks from '../../client/src/components/Looks.jsx';
+import dummyObj from '../../database/dummyObj.js';
 
 let wrapper;
 

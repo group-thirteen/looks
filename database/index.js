@@ -4,6 +4,8 @@ const faker = require('faker');
 const fs = require('fs');
 const path = require('path');
 
+// replace "localhost" with "database:27017" before deployment
+// vice versa for local hosting
 mongoose.connect('mongodb://database:27017/products',
   {
     useNewUrlParser: true,
@@ -97,8 +99,9 @@ const seedDb = () => {
   });
 };
 
-const readDb = (callback) => {
-  Item.find({}, (err, result) => {
+const readDb = (req, callback) => {
+  const query = req ? { _id: req } : {};
+  Item.find(query, (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -108,4 +111,17 @@ const readDb = (callback) => {
   }).limit(1).sort({ _id: -1 });
 };
 
-module.exports = { seedDb, readDb };
+const updateLikes = (req, callback) => {
+  const query = req.updateDirection === 'up' ? {likes: 1} : {likes: -1};
+  Item.updateOne({ _id: req.lookId }, {
+    $inc: query,
+  }, (err, result) => {
+    if (err) {
+      console.log('db error', err);
+    } else {
+      callback(null, result);
+    }
+  });
+}
+
+module.exports = { seedDb, readDb, updateLikes };

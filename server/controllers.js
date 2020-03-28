@@ -10,4 +10,14 @@ const getImg = (req, callback) => {
   });
 };
 
-module.exports = { getImg };
+const updateLikes = (req, callback) => {
+  Models.updateLikes(req, (err, successMsg) => {
+    if (err) {
+      console.log('Model error liking look', err);
+    } else {
+      callback(null, successMsg);
+    }
+  });
+};
+
+module.exports = { getImg, updateLikes };

@@ -1,7 +1,7 @@
 const db = require('../database');
 
 const getImg = (req, callback) => {
-  db.readDb((err, allImageUrls) => {
+  db.readDb(req, (err, allImageUrls) => {
     if (err) {
       console.log('database error', err);
     } else {
@@ -10,4 +10,15 @@ const getImg = (req, callback) => {
   });
 };
 
-module.exports = { getImg };
+const updateLikes = (req, callback) => {
+  console.log('Model', req);
+  db.updateLikes(req, (err, successMsg) => {
+    if (err) {
+      console.log('Could not update look document', err);
+    } else {
+      callback(null, successMsg);
+    }
+  });
+}
+
+module.exports = { getImg, updateLikes };

@@ -15,11 +15,22 @@ app.listen(port, () => {
 });
 
 app.get('/api/getimageurls', (req, res) => {
-  Controllers.getImg(req, (err, allImageUrls) => {
+  console.log(req.query.id);
+  Controllers.getImg(req.query.id, (err, allImageUrls) => {
     if (err) {
       console.log('Controller error retrieving urls', err);
     } else {
       res.send(allImageUrls);
+    }
+  });
+});
+
+app.post('/api/updateLikes', (req, res) => {
+  Controllers.updateLikes(req.body, (err, successMsg) => {
+    if (err) {
+      console.log('Controller error retrieving urls', err);
+    } else {
+      res.send(successMsg);
     }
   });
 });

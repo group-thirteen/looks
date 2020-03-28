@@ -33,7 +33,7 @@ class Looks extends React.Component {
       showModal: false,
     };
 
-    // this.getData = this.getData.bind(this);
+    this.getData = this.getData.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
   }
@@ -56,10 +56,11 @@ class Looks extends React.Component {
     }));
   }
 
-  getData() {
+  getData(id) {
     $.ajax({
       method: 'GET',
       url: '/api/getimageurls',
+      data: { id },
       success: (imageData) => {
         this.setState({
           lookData: imageData,
@@ -107,8 +108,9 @@ class Looks extends React.Component {
           <LikeShareDesc
             likes={this.state.lookData.likes}
             description={this.state.lookData.lookDescription}
-            lookId={this.state.lookData.id}
-            toggleModal={this.toggleModal} />
+            lookId={this.state.lookData._id}
+            toggleModal={this.toggleModal}
+            update={this.getData} />
         </div>
       </div>
     );
