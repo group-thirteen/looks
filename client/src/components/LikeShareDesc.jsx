@@ -11,8 +11,8 @@ const numLikeCheck = (num) => {
   return null;
 };
 
-const unLiked = './unliked.png';
-const likedIcon = './liked.png';
+const unLiked = 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/icons/unliked.png';
+const likedIcon = 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/icons/liked.png';
 
 class LikeShareDesc extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class LikeShareDesc extends React.Component {
     this.setState((state) => (
       {liked: !state.liked}
     ));
-    
+
     $.ajax({
       method: 'POST',
       url: '/api/updateLikes',
@@ -65,7 +65,7 @@ class LikeShareDesc extends React.Component {
             className={styles.shareicon}
             test="sharebutton"
             onClick={this.props.toggleModal}
-            src='./shareicon.png' />
+            src='https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/icons/shareicon.png' />
 
           </span>
 
@@ -89,6 +89,8 @@ LikeShareDesc.propTypes = {
   likes: PropTypes.number,
   description: PropTypes.string,
   toggleModal: PropTypes.func,
+  update: PropTypes.func,
+  lookId: PropTypes.string,
 };
 
 export default LikeShareDesc;
