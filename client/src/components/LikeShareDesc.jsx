@@ -11,8 +11,8 @@ const numLikeCheck = (num) => {
   return null;
 };
 
-const unLiked = '../icons/unliked.png';
-const likedIcon = '../icons/liked.png';
+const unLiked = './unliked.png';
+const likedIcon = './liked.png';
 
 class LikeShareDesc extends React.Component {
   constructor(props) {
@@ -65,7 +65,7 @@ class LikeShareDesc extends React.Component {
             className={styles.shareicon}
             test="sharebutton"
             onClick={this.props.toggleModal}
-            src='../icons/shareicon.png' />
+            src='./shareicon.png' />
 
           </span>
 
