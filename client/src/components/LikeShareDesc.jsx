@@ -11,8 +11,8 @@ const numLikeCheck = (num) => {
   return null;
 };
 
-const unLiked = 'https://i.pinimg.com/originals/d4/34/3f/d4343ffcd8fa017e790e6e9ab41a4411.png';
-const likedIcon = 'https://lh3.googleusercontent.com/proxy/hafLtuHjSe57SncJugosmTOQtpFE0HovjOx88mwTEUGihnErKzIuaWYOqE5rVjLt09w98ZhXfk1GnCbWj4a4zMIWH-gORQxr5JsdpCmypjRP9etlXbcZor8U0EknK5I00xkKb2u6oAexHdadZ4dIZ4ge_MNuYI0';
+const unLiked = '../icons/unliked.png';
+const likedIcon = '../icons/liked.png';
 
 class LikeShareDesc extends React.Component {
   constructor(props) {
@@ -65,7 +65,7 @@ class LikeShareDesc extends React.Component {
             className={styles.shareicon}
             test="sharebutton"
             onClick={this.props.toggleModal}
-            src='https://www.pngkey.com/png/full/207-2070780_png-file-apple-share-icon-svg.png' />
+            src='../icons/shareicon.png' />
 
           </span>
 
