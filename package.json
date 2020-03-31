@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node server/index.js",
+    "server-watch": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "test": "jest --config ./jest.config.js ./reactTests/tests",
     "test-watch": "jest --config ./jest.config.js --watch ./reactTests/tests",

@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import PropTypes from 'prop-types';
 import styles from '../styles/LikeShareDesc.css';
 
@@ -10,6 +11,9 @@ const numLikeCheck = (num) => {
   return null;
 };
 
+const unLiked = 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/icons/unliked.png';
+const likedIcon = 'https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/icons/liked.png';
+
 class LikeShareDesc extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +21,32 @@ class LikeShareDesc extends React.Component {
     this.state = {
       liked: false,
     };
+
+    this.likeLook = this.likeLook.bind(this);
+  }
+
+  likeLook(event) {
+    event.preventDefault();
+
+    this.setState((state) => (
+      {liked: !state.liked}
+    ));
+
+    $.ajax({
+      method: 'POST',
+      url: '/api/updateLikes',
+      data: {
+        lookId: this.props.lookId,
+        updateDirection: this.state.liked ? 'down' : 'up',
+      },
+      success: (successMessage) => {
+        console.log(`Successfully updated document ${successMessage}`);
+        this.props.update(this.props.lookId);
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
 
   render() {
@@ -28,13 +58,14 @@ class LikeShareDesc extends React.Component {
             <img
             className={styles.likeicon}
             test="likebutton"
-            src='https://i.pinimg.com/originals/d4/34/3f/d4343ffcd8fa017e790e6e9ab41a4411.png' />
+            onClick={this.likeLook}
+            src= {this.state.liked ? likedIcon : unLiked}/>
 
             <img
             className={styles.shareicon}
             test="sharebutton"
             onClick={this.props.toggleModal}
-            src='https://www.pngkey.com/png/full/207-2070780_png-file-apple-share-icon-svg.png' />
+            src='https://hrsf126-looks-fec.s3-us-west-1.amazonaws.com/fec-imagery/icons/shareicon.png' />
 
           </span>
 
@@ -58,6 +89,8 @@ LikeShareDesc.propTypes = {
   likes: PropTypes.number,
   description: PropTypes.string,
   toggleModal: PropTypes.func,
+  update: PropTypes.func,
+  lookId: PropTypes.string,
 };
 
 export default LikeShareDesc;

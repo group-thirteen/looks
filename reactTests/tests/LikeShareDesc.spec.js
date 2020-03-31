@@ -35,6 +35,12 @@ describe('Likes + Share + Description Bar', () => {
 
       expect(noLikes.find('[test="likes"]')).not.toHaveText('this look');
     });
+
+    it('should register clicks', () => {
+      wrapper.find('[test="likebutton"]').simulate('click');
+
+      expect(wrapper).toHaveState('liked', true);
+    });
   });
 
   describe('Description', () => {

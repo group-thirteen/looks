@@ -1,5 +1,5 @@
 const dummyObj = {
-	"_id" : 'ObjectId("5e70354b59bbe917f78c517b")',
+	"_id" : '',
 	"bottoms" : [
 		{
 			"id" : "f9bdf4c13c57ae1e283e455ff93cb",

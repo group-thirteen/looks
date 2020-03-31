@@ -29,3 +29,5 @@ aws/config.json
 
 #AWS s3 document to get fake Data
 database/getS3Data.js
+
+fec.pem
